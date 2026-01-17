@@ -1,0 +1,47 @@
+Challenge 1: Mi primera Automatizacion de Apis en Request Library.
+
+Nombre: Claudia Villarroel
+
+
+Feature: Registro de usuarios y Login en la API practice.expandtesting
+  Como tester de APIs
+  Quiero validar los endpoints de post para registrar un nuevo usuario y Login de usuario.
+  Para asegurarme de que funcionan correctamente
+
+  Scenario: CP01 – Registro de un Usuario
+    Given la API está disponible en " https://practice.expandtesting.com/notes/api/users/register
+    When realizo una petición POST a "users/register" con el body:
+      """
+      {
+        "email": "clau3@gmail.com",
+        "password": "Control123",
+       
+      }
+      """
+    Then el código de respuesta debe ser 201
+    And la respuesta debe contener un campo "id".
+    And los campos "name" y "email" deben coincidir con lo enviado
+    And el campo message: “User account created successfully” indica que el registro tuvo éxito.
+    And El sistema debe confirmar que la cuenta fue creada "success": true
+   
+
+
+
+  Scenario: CP02 – Login de usuario
+    Given la API está disponible en https://practice.expandtesting.com/notes/api/users/login 
+When realizo una petición POST a "users/login"con el body:
+      """
+      {
+        "email": "clau3@gmail.com",
+        "password": "Control123",
+       
+      }
+      """
+
+    
+    Then el código de respuesta debe ser 200
+    And message: “Login successful” 
+    And la respuesta despliega el campo "id"
+    And la respuesta despliega los campos "name" y "email"
+    And el sistema asigna un Token de acceso para usar la app. 
+
