@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "5145d78b-8f2b-4478-b57b-6437d821be82",
+		"name": "Stage1_Mission1_THESIMPSONClauVillarroel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7016654",
+		"_collection_link": "https://red-crater-109091.postman.co/workspace/Qa-Expert~581318f9-7e96-48b0-81cc-b05b7fbca9b9/collection/7016654-5145d78b-8f2b-4478-b57b-6437d821be82?action=share&source=collection_link&creator=7016654"
+	},
+	"item": [
+		{
+			"name": "Characters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Listado 200 y contrato Base\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"count\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"next\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"prev\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"pages\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"results\");\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"  });  \r",
+							"// Paginacion por query param\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"    // Calculo de metadatos\r",
+							"    \r",
+							"\r",
+							"    // Estructura minima de cada personaje en results\r",
+							"pm.test(\"Each character has valid structure\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(jsonData.results).to.be.an('array');\r",
+							"    \r",
+							"    jsonData.results.forEach(function(character) {\r",
+							"        pm.expect(character).to.have.property('id');\r",
+							"        pm.expect(character).to.have.property('name');\r",
+							"        pm.expect(character).to.have.property('age');\r",
+							"        pm.expect(character).to.have.property('gender');\r",
+							"        pm.expect(character).to.have.property('occupation');\r",
+							"        pm.expect(character).to.have.property('portrait_path');\r",
+							"        pm.expect(character).to.have.property('phrases');\r",
+							"        pm.expect(character).to.have.property('status');\r",
+							"        \r",
+							"        pm.expect(character.id).to.be.a('number');\r",
+							"        pm.expect(character.name).to.be.a('string');\r",
+							"        pm.expect(character.gender).to.be.a('string');\r",
+							"        pm.expect(character.occupation).to.be.a('string');\r",
+							"        pm.expect(character.portrait_path).to.be.a('string');\r",
+							"        pm.expect(character.phrases).to.be.an('array');\r",
+							"        pm.expect(character.status).to.be.a('string');\r",
+							"    });\r",
+							"});\r",
+							"    // Validacion de Formatos\r",
+							"\r",
+							"    // Detalle por ID 200\r",
+							"\r",
+							"    // Errores bien definidos\r",
+							"\r",
+							"    // Orden estable del Listado\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://thesimpsonsapi.com/api/characters",
+					"protocol": "https",
+					"host": [
+						"thesimpsonsapi",
+						"com"
+					],
+					"path": [
+						"api",
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
