@@ -1,7 +1,7 @@
 
 > # Portafolio de Automatización de Pruebas - CLAUDIA VILLARROEL ALBORTA 
 >
-> ¡Hola! Soy un apasionado QA en formación, enfocado en la automatización de pruebas de API.
+> ¡Hola! Soy un apasionada QA en formación, enfocado en la automatización de pruebas de API.
 > Este repositorio contiene los proyectos que he desarrollado como parte de la mentoría QA Pro Level de QAX. 
 >
 > ### Tecnologías que utilizo 
