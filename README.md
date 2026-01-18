@@ -7,7 +7,7 @@
 > ### Tecnologías que utilizo 
 > - **Lenguaje:** PYTHON
 > - **Frameworks de Automatización:** ROBOT FRAMEWORK, Selenium WebDriver 
-> - **Gestión de Pruebas:** TestNG, JUnit 
+> - **Gestión de Pruebas:** Pycharm
 > - **Herramientas Adicionales:** Postman, Git, Maven, Docker (opcional)
 >
 > ### Proyectos
