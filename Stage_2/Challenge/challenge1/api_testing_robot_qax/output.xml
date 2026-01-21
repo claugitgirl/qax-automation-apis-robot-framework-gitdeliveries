@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2026-01-15T19:10:26.573711" rpa="false" schemaversion="5">
+<suite id="s1" name="Test User" source="C:\ArchivosClaudia\qaxpert_training\APIS\qa-automation-apis-robot-framework\Delivery\Claudia_Villarroel\stage_2\api_testing_robot_qax\tests\bookStore\Account\Test_User.robot">
+<test id="s1-t1" name="Crear usuario exitosamente" line="7">
+<kw name="Given que el usuario desea crear un nuevo usuario" owner="createUser">
+<kw name="Generate Random String" owner="String">
+<msg time="2026-01-15T19:10:26.820667" level="INFO">${random} = ZENu9</msg>
+<var>${random}</var>
+<arg>5</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2026-01-15T19:10:26.820343" elapsed="0.000366"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-15T19:10:26.821061" level="INFO">${userName} = ninja_for_testing_ZENu9</msg>
+<var>${userName}</var>
+<arg>ninja_for_testing_${random}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-15T19:10:26.820879" elapsed="0.000207"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-15T19:10:26.821318" level="INFO">${password} = Test@1234</msg>
+<var>${password}</var>
+<arg>Test@1234</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-15T19:10:26.821216" elapsed="0.000129"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-01-15T19:10:26.821812" level="INFO">&amp;{payload} = { userName=ninja_for_testing_ZENu9 | password=Test@1234 }</msg>
+<var>&amp;{payload}</var>
+<arg>userName=${userName}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-01-15T19:10:26.821461" elapsed="0.000383"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-01-15T19:10:26.822247" level="INFO">&amp;{payload} = { userName=ninja_for_testing_ZENu9 | password=Test@1234 }</msg>
+<arg>&amp;{payload}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2026-01-15T19:10:26.821973" elapsed="0.000317"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-01-15T19:10:26.822567" level="INFO">${userName} = ninja_for_testing_ZENu9</msg>
+<arg>${userName}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2026-01-15T19:10:26.822381" elapsed="0.000302"/>
+</kw>
+<doc>Crear un JSON dinamico con un username unico y un password valido con el formato correcto</doc>
+<status status="PASS" start="2026-01-15T19:10:26.819713" elapsed="0.003064"/>
+</kw>
+<kw name="When el usuario envia la peticion para la creación del usuario" owner="createUser">
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2026-01-15T19:10:28.326336" level="INFO">POST Request : url=https://demoqa.com/Account/v1/user 
+ path_url=/Account/v1/user 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '64'} 
+ body=b'{"userName": "ninja_for_testing_ZENu9", "password": "Test@1234"}' 
+ </msg>
+<msg time="2026-01-15T19:10:28.326522" level="INFO">POST Response : url=https://demoqa.com/Account/v1/user 
+ status=201, reason=Created 
+ headers={'Server': 'nginx/1.17.10 (Ubuntu)', 'Date': 'Thu, 15 Jan 2026 23:10:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '97', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'ETag': 'W/"61-hqzDwSjX+wRP6yeswfHkb1Q5w5s"'} 
+ body={"userID":"069adc2f-95fd-4aab-ae07-9c7c93e0bff8","username":"ninja_for_testing_ZENu9","books":[]} 
+ </msg>
+<msg time="2026-01-15T19:10:28.326759" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>url=${ENDPOINT_USER}</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2026-01-15T19:10:26.823615" elapsed="1.503190"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-01-15T19:10:28.327379" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2026-01-15T19:10:28.327048" elapsed="0.000403"/>
+</kw>
+<doc>El usuario crea un nuevo post en el endpoint /posts utilizando
+el método POST y un cuerpo JSON por defecto.</doc>
+<status status="PASS" start="2026-01-15T19:10:26.823226" elapsed="1.504347"/>
+</kw>
+<kw name="Then la API responde el userId" owner="createUser">
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-01-15T19:10:28.328699" elapsed="0.000377"/>
+</kw>
+<kw name="Validar el userId" owner="createUser">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-15T19:10:28.330527" level="INFO">${userId} = 069adc2f-95fd-4aab-ae07-9c7c93e0bff8</msg>
+<var>${userId}</var>
+<arg>${response.json()}[userID]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-15T19:10:28.329955" elapsed="0.000603"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-15T19:10:28.330798" level="INFO">${pattern} = ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</msg>
+<var>${pattern}</var>
+<arg>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-15T19:10:28.330674" elapsed="0.000151"/>
+</kw>
+<kw name="Should Match Regexp" owner="BuiltIn">
+<arg>${userId}</arg>
+<arg>${pattern}</arg>
+<arg>msg=userId no tiene formato UUID válido</arg>
+<doc>Fails if ``string`` does not match ``pattern`` as a regular expression.</doc>
+<status status="PASS" start="2026-01-15T19:10:28.330932" elapsed="0.000395"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2026-01-15T19:10:28.331653" level="INFO">${userId} = 069adc2f-95fd-4aab-ae07-9c7c93e0bff8</msg>
+<arg>${userId}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2026-01-15T19:10:28.331458" elapsed="0.000240"/>
+</kw>
+<doc>valia que responda el userId y que tenga el formato valido y almacenada en una variable global</doc>
+<status status="PASS" start="2026-01-15T19:10:28.329336" elapsed="0.002418"/>
+</kw>
+<doc>Valida el estado de la respuesta, valia que responda el userId y lo guardamos en una variable global</doc>
+<status status="PASS" start="2026-01-15T19:10:28.328235" elapsed="0.003563"/>
+</kw>
+<doc>Crear un usuario nuevo usando datos validos.</doc>
+<status status="PASS" start="2026-01-15T19:10:26.817131" elapsed="1.514995"/>
+</test>
+<doc>Test Case: Crear usuario con POST /Account/v1/User
+  Verifica que se cree un usuario con userName único y password válida</doc>
+<status status="PASS" start="2026-01-15T19:10:26.576276" elapsed="1.757004"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test User" id="s1" pass="1" fail="0" skip="0">Test User</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
