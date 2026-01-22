@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-01-22T17:21:24.392682" rpa="false" schemaversion="5">
+<suite id="s1" name="Challenge2 Stage1" source="C:\ArchivosClaudia\qax-automation-apis-robot-framework-gitdeliveries\Stage_1\Challenge\challenge_2\Challenge2_Stage1.robot">
+<test id="s1-t1" name="CP01 - Registro de Usuarios" line="10">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-01-22T17:21:24.518876" level="INFO">${payload} = {'name : "Ana Mariasss" , email : "anamariasss@reqres.com",': 'password : "pistol"'}</msg>
+<var>${payload}</var>
+<arg>name : "Ana Mariasss" , email : "anamariasss@reqres.com",</arg>
+<arg>password : "pistol"</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-01-22T17:21:24.518131" elapsed="0.000802"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2026-01-22T17:21:25.479351" level="INFO">POST Request : url=https://practice.expandtesting.com/notes/api/users/register 
+ path_url=/notes/api/users/register 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '90', 'Content-Type': 'application/json'} 
+ body=b'{"name : \\"Ana Mariasss\\" , email : \\"anamariasss@reqres.com\\",": "password : \\"pistol\\""}' 
+ </msg>
+<msg time="2026-01-22T17:21:25.479510" level="INFO">POST Response : url=https://practice.expandtesting.com/notes/api/users/register 
+ status=400, reason=Bad Request 
+ headers={'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-methods': 'GET, POST, PUT, DELETE, PATCH', 'access-control-allow-headers': 'Origin, X-Requested-With, Authorization, Content-Type, Accept, X-Auth-Token', 'content-type': 'application/json; charset=utf-8', 'content-encoding': 'gzip', 'etag': 'W/"58-te2VZDtbFjHO92AYryi5RoFxHjc"', 'set-cookie': 'express:sess=eyJmbGFzaCI6e319; path=/; httponly, express:sess.sig=tdt42nQZiQvICqmrvHQ1_16fHk0; path=/; httponly', 'date': 'Thu, 22 Jan 2026 21:21:24 GMT', 'connection': 'keep-alive', 'keep-alive': 'timeout=5', 'transfer-encoding': 'chunked'} 
+ body={"success":false,"status":400,"message":"User name must be between 4 and 30 characters"} 
+ </msg>
+<msg time="2026-01-22T17:21:25.479711" level="FAIL">Url: https://practice.expandtesting.com/notes/api/users/register Expected status: 400 != 201</msg>
+<var>${response}</var>
+<arg>${BASE_URL}/users/register</arg>
+<arg>json=${payload}</arg>
+<arg>expected_status=201</arg>
+<doc>Sends a POST request.</doc>
+<status status="FAIL" start="2026-01-22T17:21:24.519428" elapsed="0.962515">Url: https://practice.expandtesting.com/notes/api/users/register Expected status: 400 != 201</status>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[message]</arg>
+<arg>User account created successfully</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2026-01-22T17:21:25.482404" elapsed="0.000031"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[success]</arg>
+<arg>true</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2026-01-22T17:21:25.482700" elapsed="0.000026"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[name]</arg>
+<arg>Ana Mariasss</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2026-01-22T17:21:25.483012" elapsed="0.000025"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[email]</arg>
+<arg>anamariasss@reqres.com</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2026-01-22T17:21:25.483321" elapsed="0.000023"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${response.json()}[password]</arg>
+<arg>pistol</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2026-01-22T17:21:25.483602" elapsed="0.000021"/>
+</kw>
+<doc>Verifica que se registra un usuario y devuelve 201 con datos correctos.</doc>
+<status status="FAIL" start="2026-01-22T17:21:24.516253" elapsed="0.967668">Url: https://practice.expandtesting.com/notes/api/users/register Expected status: 400 != 201</status>
+</test>
+<test id="s1-t2" name="CP02 - Login de Usuario" line="23">
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2026-01-22T17:21:26.272908" level="INFO">POST Request : url=https://practice.expandtesting.com/notes/api/users/login 
+ path_url=/notes/api/users/login 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2026-01-22T17:21:26.273126" level="INFO">POST Response : url=https://practice.expandtesting.com/notes/api/users/login 
+ status=400, reason=Bad Request 
+ headers={'access-control-allow-origin': '*', 'access-control-allow-credentials': 'true', 'access-control-allow-methods': 'GET, POST, PUT, DELETE, PATCH', 'access-control-allow-headers': 'Origin, X-Requested-With, Authorization, Content-Type, Accept, X-Auth-Token', 'content-type': 'application/json; charset=utf-8', 'content-encoding': 'gzip', 'etag': 'W/"4c-2CHdrZOfnaVxbkWhhDN4H2L/4l8"', 'set-cookie': 'express:sess=eyJmbGFzaCI6e319; path=/; httponly, express:sess.sig=tdt42nQZiQvICqmrvHQ1_16fHk0; path=/; httponly', 'date': 'Thu, 22 Jan 2026 21:21:25 GMT', 'connection': 'keep-alive', 'keep-alive': 'timeout=5', 'transfer-encoding': 'chunked'} 
+ body={"success":false,"status":400,"message":"A valid email address is required"} 
+ </msg>
+<msg time="2026-01-22T17:21:26.273396" level="FAIL">Url: https://practice.expandtesting.com/notes/api/users/login Expected status: 400 != 200</msg>
+<var>${response}</var>
+<arg>${BASE_URL}${USER_LOGIN}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request.</doc>
+<status status="FAIL" start="2026-01-22T17:21:25.486222" elapsed="0.789156">Url: https://practice.expandtesting.com/notes/api/users/login Expected status: 400 != 200</status>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${login}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-01-22T17:21:26.276061" elapsed="0.000058"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${login.json()}[message]</arg>
+<arg>Login successfully</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2026-01-22T17:21:26.276558" elapsed="0.000049"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${login[0]}</arg>
+<arg>name</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-01-22T17:21:26.276957" elapsed="0.000040"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${login[0]}</arg>
+<arg>email</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-01-22T17:21:26.277315" elapsed="0.000033"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${login[0]}</arg>
+<arg>token</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="NOT RUN" start="2026-01-22T17:21:26.277706" elapsed="0.000033"/>
+</kw>
+<doc>Verifica que un POST a users/login develve datos usuario y token.</doc>
+<status status="FAIL" start="2026-01-22T17:21:25.485380" elapsed="0.792796">Url: https://practice.expandtesting.com/notes/api/users/login Expected status: 400 != 200</status>
+</test>
+<status status="FAIL" start="2026-01-22T17:21:24.395009" elapsed="1.884816"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Challenge2 Stage1" id="s1" pass="0" fail="2" skip="0">Challenge2 Stage1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

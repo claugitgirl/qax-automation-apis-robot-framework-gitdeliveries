@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1996e4f6-3ec1-4d12-b10e-cecf035fc26a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../Stage_1/Challenge/Challenge1GherkinClaudiaVantes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Mission/README.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="38JQYWOP4Arl2nBQsJLqQwLCmEv" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Robot Framework.Create_User_token.executor": "Debug",
+    "Robot Framework.Test_Get_User.executor": "Debug",
+    "Robot Framework.Test_post_Api.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/ArchivosClaudia/qax-automation-apis-robot-framework-gitdeliveries/Stage_2/Challenge/challenge1/api_testing_robot_qax"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ArchivosClaudia\qaxpert_training\APIS\qa-automation-apis-robot-framework\Delivery\Claudia_Villarroel\stage_2\api_testing_robot_qax\tests" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ArchivosClaudia\qaxpert_training\APIS\qa-automation-apis-robot-framework\Delivery\Claudia_Villarroel\stage_2\api_testing_robot_qax\tests\bookStore\Account" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Robot Framework.Test_post_Api">
+    <configuration name="Test_Get_User" type="RobotFramework" factoryName="RobotFramework">
+      <option name="target" value="C:\ArchivosClaudia\qaxpert_training\APIS\qa-automation-apis-robot-framework\Delivery\Claudia_Villarroel\stage_2\api_testing_robot_qax\tests\test_user_api.robot" />
+      <option name="args">
+        <list />
+      </option>
+      <option name="env" />
+      <option name="workingDir" />
+      <option name="makeSuite" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_post_Api" type="RobotFramework" factoryName="RobotFramework">
+      <option name="target" value="C:\ArchivosClaudia\qaxpert_training\APIS\qa-automation-apis-robot-framework\Delivery\Claudia_Villarroel\stage_2\api_testing_robot_qax\tests" />
+      <option name="args">
+        <list>
+          <option value="--include" />
+          <option value="test" />
+        </list>
+      </option>
+      <option name="env" />
+      <option name="workingDir" />
+      <option name="makeSuite" value="true" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Robot Framework.Test_Get_User" />
+      <item itemvalue="Robot Framework.Test_post_Api" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1996e4f6-3ec1-4d12-b10e-cecf035fc26a" name="Changes" comment="" />
+      <created>1768515242590</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768515242590</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/resource/keywords/getUser.resource</url>
+          <line>24</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/resource/keywords/getUser.resource</url>
+          <line>26</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/resource/keywords/doPost.resource</url>
+          <line>16</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/resource/variables/setup.resource</url>
+          <line>8</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="robot-line">
+          <url>file://$PROJECT_DIR$/resource/keywords/doPost.resource</url>
+          <line>18</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
